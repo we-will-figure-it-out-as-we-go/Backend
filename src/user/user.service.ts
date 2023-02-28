@@ -8,7 +8,10 @@ import { User, UserDocument } from './entities/user.entity';
 
 @Injectable()
 export class UserService {
+  
   constructor(@InjectModel(User.name) private UserModel: Model<UserDocument>) {}
+
+
    async create(createUserDto: CreateUserDto) {
     const createdUser = new this.UserModel(createUserDto);
     
